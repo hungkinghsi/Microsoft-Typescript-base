@@ -139,10 +139,20 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": "css"
+        }
+      ]
     ]
   },
   "devDependencies": {
     "@types/antd": "^1.0.0",
+    "babel-plugin-import": "^1.13.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2"
   }
