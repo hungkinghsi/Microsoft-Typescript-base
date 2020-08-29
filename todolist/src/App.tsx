@@ -69,7 +69,7 @@ function App() {
       key: list.length + 1,
       content: ipt.state.value,
       time: new Date().getTime(),
-      canEdit: true
+      canEdit: true,
     }
     ipt.state.value = "";
     _list.push(item);
@@ -165,22 +165,25 @@ function App() {
       <a href="https://blog.indeex.club"><img src={logo} alt="" className={styles.logo} /></a>
       <Row className={styles.btns}>
         <Col span={11}>
+          {/* 增加 */}
           <Input placeholder="content" className={styles.ipt} ref={addEle} />
           <Button type="primary" className={styles.btn} onClick={handleAddClick}>add</Button>
         </Col>
         <Col span={11} offset={2}>
+          {/* 搜索 */}
           <Input placeholder="keyword" className={styles.ipt} ref={searchEle} />
           <Button type="primary" className={styles.btn} onClick={handleSearchClick}>search</Button>
         </Col>
       </Row>
       <Row className={styles.sort}>
+        {/* 排序 */}
         <Col span={4}><Button type="primary" onClick={handleSortClick}>字母排序</Button></Col>
         <Col span={4} offset={1}><Button type="primary" onClick={handleTimeSortClick}>时间排序</Button></Col>
       </Row>
       <Row>
         <Table columns={columns} dataSource={list} pagination={false} className={styles.tb} />
       </Row>
-
+{/* 修改 */}
       <Modal
         title="编辑"
         visible={visible}
